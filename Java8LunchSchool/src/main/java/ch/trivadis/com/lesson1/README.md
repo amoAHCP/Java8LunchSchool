@@ -1,3 +1,5 @@
+# Lesson 1: default interfaces
+
 ## given: two interfaces with same (default) method signature
 
 ## solution

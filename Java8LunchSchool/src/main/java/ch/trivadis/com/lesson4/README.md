@@ -1,8 +1,12 @@
 # Lesson 4: Working with Streams
 
 ##  Streams are no Collections!!! --> the are (lazy) representations (views) of a stream
-- Example: List[a,b,ca,d,ae,f,ag] --> filtered stream -> [a,ca,ae,ag]
+- Example: List[a,b,ca,d,ae,f,ag] --> filtered stream -> [a,ca,ae,ag,[a,b,ca,d,ae,f,ag]]
 - When dealing with Streams you never change the underlying collection
+
+## Streams distinguishs between terminal and non-terminal operations
+- terminal operations: return either void or a non-stream result (like forEach)
+- non-terminal: return a stream to proceed the work
  
 ## be aware of parallel Streams
 - can lead to non-deterministic results (Example: find first element with certain conditions while the result set of you condition is >1) 

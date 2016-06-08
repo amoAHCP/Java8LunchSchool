@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by Andy Moncsek on 07.06.16.
  */
-public class Person {
+public class Person implements Comparable<Person> {
 
     private final String firstName;
     private final String lastName;
@@ -47,6 +47,7 @@ public class Person {
         return addresses;
     }
 
+
     // Start your Builder always with the last member you want to add (if order matters), the last builder interface always returns the type of the Object you want to build
 
     public interface AddressesBuilder {
@@ -78,7 +79,7 @@ public class Person {
     // the static "build" method returns always with the first builder interface
 
     public static FirstNameBuilder build() {
-        return firstName -> lastName -> age -> street -> zip -> addresses-> new Person(firstName, lastName, age, street, zip,addresses);
+        return firstName -> lastName -> age -> street -> zip -> addresses -> new Person(firstName, lastName, age, street, zip, addresses);
     }
 
     @Override
@@ -91,5 +92,10 @@ public class Person {
                 ", zip='" + zip + '\'' +
                 ", addresses=" + addresses +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return firstName.compareTo(o.firstName);
     }
 }
